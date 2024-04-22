@@ -2,10 +2,10 @@ import { useRef } from 'react';
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
-import EarthMap from '../../../assets/earth/earth.jpg';
-import EarthNormalMap from '../../../assets/earth/earth-normal-map.jpg';
-import EarthSpecularMap from '../../../assets/earth/earth-specular-map.jpg';
-import EarthDisplacementMap from '../../../assets/earth/earth-displacement-map.jpg';
+import EarthMap from '/assets/earth/earth.jpg';
+import EarthNormalMap from '/assets/earth/earth-normal-map.jpg';
+import EarthSpecularMap from '/assets/earth/earth-specular-map.jpg';
+import EarthDisplacementMap from '/assets/earth/earth-displacement-map.jpg';
 import Moon from './Moon';
 
 const Earth = () => {

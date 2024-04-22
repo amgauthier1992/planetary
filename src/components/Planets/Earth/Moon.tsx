@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
-import MoonMap from '../../../assets/earth/moon-map.jpg';
+import MoonMap from '/assets/earth/moon-map.jpg';
 
 const Moon = () => {
   const moonRef = useRef<Mesh>();
