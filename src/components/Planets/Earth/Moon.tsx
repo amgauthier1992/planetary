@@ -11,8 +11,8 @@ const Moon = () => {
   useFrame(({ clock }) => {
     if (moonRef.current) {
       //Orbit
-      moonRef.current.position.x = Math.sin(clock.getElapsedTime() * 0.2) * 4;
-      moonRef.current.position.z = Math.cos(clock.getElapsedTime() * 0.2) * 4;
+      moonRef.current.position.x = Math.sin(clock.getElapsedTime() * 0.8) * 4;
+      moonRef.current.position.z = Math.cos(clock.getElapsedTime() * 0.8) * 4;
       //Axis
       moonRef.current.rotation.y += 0.002;
     }
@@ -20,11 +20,12 @@ const Moon = () => {
 
   return (
     <mesh
-      castShadow
+      //castShadow
+      receiveShadow
       ref={moonRef as React.MutableRefObject<Mesh>}
       position={[4, 0, 0]}
     >
-      <sphereGeometry args={[0.33, 32, 32]} />
+      <sphereGeometry args={[0.25, 32, 32]} />
       <meshPhongMaterial map={moonTexture} />
     </mesh>
   );
