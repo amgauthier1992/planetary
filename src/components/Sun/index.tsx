@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useHelper, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh, PointLight, PointLightHelper } from 'three';
-import SunMap from '/assets/sun/sun-map.jpg';
+import SunMap from '/assets/sun/sun.jpg';
 
 const Sun = () => {
   const sunRef = useRef<Mesh>();
@@ -23,7 +23,7 @@ const Sun = () => {
       position={[0, 0, 0]}
     >
       {/* Radius , X-axis , Y-axis */}
-      <sphereGeometry args={[3, 32, 32]} />
+      <sphereGeometry args={[6, 32, 32]} />
       <meshPhongMaterial
         map={sunTexture}
         emissiveMap={sunTexture}
@@ -31,8 +31,8 @@ const Sun = () => {
         emissive={0xffffff}
       />
       <pointLight
-        castShadow
-        intensity={3000}
+        // castShadow
+        intensity={7000}
         ref={pointLightRef}
       />
     </mesh>
