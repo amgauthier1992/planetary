@@ -22,6 +22,7 @@ const SolarSystem = () => {
       />
       <AnimatedStars />
       <directionalLight
+        castShadow
         intensity={3}
         position={[0, 0, 10]}
         ref={directionalLightRef as React.MutableRefObject<DirectionalLight>}
