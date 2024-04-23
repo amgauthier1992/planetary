@@ -1,7 +1,7 @@
 import AnimatedStars from '../components/AnimatedStars';
 import Earth from '../components/Planets/Earth';
 // import Jupiter from '../components/Planets/Jupiter';
-// import Mars from '../components/Planets/Mars';
+import Mars from '../components/Planets/Mars';
 import Mercury from '../components/Planets/Mercury';
 // import Neptune from '../components/Planets/Neptune';
 // import Saturn from '../components/Planets/Saturn';
@@ -21,7 +21,7 @@ const SolarSystem = () => {
       <Mercury />
       <Venus />
       <Earth />
-      {/* <Mars /> */}
+      <Mars />
       {/* <Jupiter /> */}
       {/* <Saturn /> */}
       {/* <Uranus /> */}
