@@ -23,7 +23,7 @@ const Sun = () => {
       position={[0, 0, 0]}
     >
       {/* Radius , X-axis , Y-axis */}
-      <sphereGeometry args={[6, 32, 32]} />
+      <sphereGeometry args={[20, 32, 32]} />
       <meshPhongMaterial
         map={sunTexture}
         emissiveMap={sunTexture}
@@ -32,7 +32,7 @@ const Sun = () => {
       />
       <pointLight
         // castShadow
-        intensity={7000}
+        intensity={10000}
         ref={pointLightRef}
       />
     </mesh>
