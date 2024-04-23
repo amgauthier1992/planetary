@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh } from 'three';
-import MoonMap from '/assets/earth/moon-map.jpg';
+import MoonMap from '/assets/earth/moon.jpg';
 
 const Moon = () => {
   const moonRef = useRef<Mesh>();
@@ -10,10 +10,10 @@ const Moon = () => {
 
   useFrame(({ clock }) => {
     if (moonRef.current) {
-      //Orbit
-      moonRef.current.position.x = Math.sin(clock.getElapsedTime() * 0.8) * 4;
-      moonRef.current.position.z = Math.cos(clock.getElapsedTime() * 0.8) * 4;
-      //Axis
+      // Orbit Rotation
+      moonRef.current.position.x = Math.sin(clock.getElapsedTime() * 2) * 8;
+      moonRef.current.position.z = Math.cos(clock.getElapsedTime() * 2) * 8;
+      // Axis Rotation
       moonRef.current.rotation.y += 0.002;
     }
   });
@@ -25,7 +25,7 @@ const Moon = () => {
       ref={moonRef as React.MutableRefObject<Mesh>}
       position={[4, 0, 0]}
     >
-      <sphereGeometry args={[0.25, 32, 32]} />
+      <sphereGeometry args={[1, 32, 32]} />
       <meshPhongMaterial map={moonTexture} />
     </mesh>
   );
