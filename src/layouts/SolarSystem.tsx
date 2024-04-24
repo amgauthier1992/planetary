@@ -6,7 +6,7 @@ import Mercury from '../components/Planets/Mercury';
 // import Neptune from '../components/Planets/Neptune';
 import Saturn from '../components/Planets/Saturn';
 import Sun from '../components/Sun';
-// import Uranus from '../components/Planets/Uranus';
+import Uranus from '../components/Planets/Uranus';
 import Venus from '../components/Planets/Venus';
 
 const SolarSystem = () => {
@@ -24,7 +24,7 @@ const SolarSystem = () => {
       <Mars />
       <Jupiter />
       <Saturn />
-      {/* <Uranus /> */}
+      <Uranus />
       {/* <Neptune /> */}
     </>
   );
