@@ -6,14 +6,14 @@ import NeptuneMap from '/assets/neptune/neptune.jpg';
 
 const Neptune = () => {
   const neptuneRef = useRef<Group>();
-  const neptunePositionRef = useRef(new Vector3(190, 0, 0));
+  const neptunePositionRef = useRef(new Vector3(1250, 0, 0));
 
   const [neptuneTexture] = useTexture<string[]>([NeptuneMap]);
 
   useFrame(({ clock }) => {
     if (neptuneRef.current) {
-      const angle = clock.getElapsedTime() * 0.3;
-      const distance = 190;
+      const angle = clock.getElapsedTime() * 0.075;
+      const distance = 1250;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       neptuneRef.current.position.set(x, 0, z);
@@ -28,7 +28,7 @@ const Neptune = () => {
         //castShadow
         receiveShadow
       >
-        <sphereGeometry args={[6, 32, 32]} />
+        <sphereGeometry args={[38, 32, 32]} />
         <meshPhongMaterial map={neptuneTexture} />
       </mesh>
     </group>

@@ -10,7 +10,7 @@ import Moon from './Moon';
 
 const Earth = () => {
   const earthRef = useRef<Group>();
-  const earthPositionRef = useRef(new Vector3(60, 0, 0)); // Reference to the Earth's position vector
+  const earthPositionRef = useRef(new Vector3(365, 0, 0)); // Reference to the Earth's position vector
 
   const [earthTexture, earthNormalMap, earthSpecularMap, earthDisplacementMap] = useTexture<
     string[]
@@ -18,8 +18,8 @@ const Earth = () => {
 
   useFrame(({ clock }) => {
     if (earthRef.current) {
-      const angle = clock.getElapsedTime() * 1.1;
-      const distance = 60;
+      const angle = clock.getElapsedTime() * 0.325;
+      const distance = 365;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       earthRef.current.position.set(x, 0, z);
@@ -33,8 +33,11 @@ const Earth = () => {
       <mesh
         castShadow
         receiveShadow
+        onClick={() => {
+          alert('Earth click');
+        }}
       >
-        <sphereGeometry args={[4, 32, 32]} />
+        <sphereGeometry args={[25, 32, 32]} />
         <meshPhongMaterial
           displacementMap={earthDisplacementMap}
           displacementScale={0.05}

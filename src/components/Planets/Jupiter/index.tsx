@@ -6,14 +6,14 @@ import JupiterMap from '/assets/jupiter/jupiter.jpg';
 
 const Jupiter = () => {
   const jupiterRef = useRef<Group>();
-  const jupiterPositionRef = useRef(new Vector3(100, 0, 0));
+  const jupiterPositionRef = useRef(new Vector3(625, 0, 0));
 
   const [jupiterTexture] = useTexture<string[]>([JupiterMap]);
 
   useFrame(({ clock }) => {
     if (jupiterRef.current) {
-      const angle = clock.getElapsedTime() * 0.7;
-      const distance = 100;
+      const angle = clock.getElapsedTime() * 0.225;
+      const distance = 625;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       jupiterRef.current.position.set(x, 0, z);
@@ -28,7 +28,7 @@ const Jupiter = () => {
         //castShadow
         receiveShadow
       >
-        <sphereGeometry args={[10, 32, 32]} />
+        <sphereGeometry args={[60, 32, 32]} />
         <meshPhongMaterial map={jupiterTexture} />
       </mesh>
     </group>

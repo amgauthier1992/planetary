@@ -6,14 +6,14 @@ import MarsMap from '/assets/mars/mars.jpg';
 
 const Mars = () => {
   const marsRef = useRef<Group>();
-  const marsPositionRef = useRef(new Vector3(72, 0, 0));
+  const marsPositionRef = useRef(new Vector3(455, 0, 0));
 
   const [marsTexture] = useTexture<string[]>([MarsMap]);
 
   useFrame(({ clock }) => {
     if (marsRef.current) {
-      const angle = clock.getElapsedTime() * 1.0;
-      const distance = 72;
+      const angle = clock.getElapsedTime() * 0.275;
+      const distance = 455;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       marsRef.current.position.set(x, 0, z);
@@ -28,7 +28,7 @@ const Mars = () => {
         //castShadow
         receiveShadow
       >
-        <sphereGeometry args={[2.75, 32, 32]} />
+        <sphereGeometry args={[16, 32, 32]} />
         <meshPhongMaterial map={marsTexture} />
       </mesh>
       {/* Mars Moons? */}
