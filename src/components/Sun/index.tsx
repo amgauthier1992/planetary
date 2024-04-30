@@ -23,18 +23,19 @@ const Sun = () => {
       position={[0, 0, 0]}
     >
       {/* Radius , X-axis , Y-axis */}
-      <sphereGeometry args={[20, 32, 32]} />
+      <sphereGeometry args={[100, 32, 32]} />
       <meshPhongMaterial
         map={sunTexture}
         emissiveMap={sunTexture}
         emissiveIntensity={0.6}
         emissive={0xffffff}
       />
-      <pointLight
+      <ambientLight />
+      {/* <pointLight
         // castShadow
-        intensity={10000}
+        intensity={100000}
         ref={pointLightRef}
-      />
+      /> */}
     </mesh>
   );
 };

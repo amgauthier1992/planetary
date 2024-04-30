@@ -6,14 +6,14 @@ import VenusMap from '/assets/venus/venus.jpg';
 
 const Venus = () => {
   const venusRef = useRef<Mesh>();
-  const venusPositionRef = useRef(new Vector3(48, 0, 0));
+  const venusPositionRef = useRef(new Vector3(265, 0, 0));
 
   const [venusTexture] = useTexture<string[]>([VenusMap]);
 
   useFrame(({ clock }) => {
     if (venusRef.current) {
-      const angle = clock.getElapsedTime() * 1.3;
-      const distance = 48;
+      const angle = clock.getElapsedTime() * 0.375;
+      const distance = 265;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       venusRef.current.position.set(x, 0, z);
@@ -28,7 +28,7 @@ const Venus = () => {
       receiveShadow
       ref={venusRef as React.MutableRefObject<Mesh>}
     >
-      <sphereGeometry args={[3.5, 32, 32]} />
+      <sphereGeometry args={[23, 32, 32]} />
       <meshPhongMaterial map={venusTexture} />
     </mesh>
   );

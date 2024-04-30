@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'; //useState
+import { useEffect, useRef } from 'react';
 import { Audio as THREEAudio, AudioListener, AudioLoader } from 'three';
 
 const loadAudio = async (audioUrl: string, audioRef: React.MutableRefObject<THREEAudio | null>) => {

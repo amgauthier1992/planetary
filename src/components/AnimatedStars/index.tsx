@@ -16,7 +16,7 @@ const AnimatedStars = () => {
 
   return (
     <group ref={starsRef as unknown as React.MutableRefObject<Group>}>
-      <Stars />
+      <Stars radius={800} />
     </group>
   );
 };

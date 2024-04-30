@@ -4,16 +4,17 @@ import { OrbitControls } from '@react-three/drei';
 import Audio from './components/Audio';
 import Loading from './components/Loading';
 import SolarSystem from './layouts/SolarSystem';
-import { Perf } from 'r3f-perf'; //enable for performance monitoring
+// import { Perf } from 'r3f-perf';
 
 const App = () => {
   return (
     <Canvas
-      camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 75, 125] }}
+      camera={{ fov: 75, near: 0.1, far: 4500, position: [0, 400, 500] }}
       shadows
     >
       <Suspense fallback={<Loading />}>
-        <Perf />
+        {/* Enable Perf for performance monitoring */}
+        {/* <Perf /> */}
         <OrbitControls
           enableDamping
           dampingFactor={0.25}

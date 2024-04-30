@@ -6,14 +6,14 @@ import MercuryMap from '/assets/mercury/mercury.jpg';
 
 const Mercury = () => {
   const mercuryRef = useRef<Mesh>();
-  const mercuryPositionRef = useRef(new Vector3(36, 0, 0));
+  const mercuryPositionRef = useRef(new Vector3(175, 0, 0));
 
   const [mercuryTexture] = useTexture<string[]>([MercuryMap]);
 
   useFrame(({ clock }) => {
     if (mercuryRef.current) {
-      const angle = clock.getElapsedTime() * 1.5;
-      const distance = 36;
+      const angle = clock.getElapsedTime() * 0.425;
+      const distance = 175;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       mercuryRef.current.position.set(x, 0, z);
@@ -28,7 +28,7 @@ const Mercury = () => {
       receiveShadow
       ref={mercuryRef as React.MutableRefObject<Mesh>}
     >
-      <sphereGeometry args={[1.5, 32, 32]} />
+      <sphereGeometry args={[12, 32, 32]} />
       <meshPhongMaterial map={mercuryTexture} />
     </mesh>
   );

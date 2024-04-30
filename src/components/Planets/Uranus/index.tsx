@@ -6,14 +6,14 @@ import UranusMap from '/assets/uranus/uranus.jpg';
 
 const Uranus = () => {
   const uranusRef = useRef<Group>();
-  const uranusPositionRef = useRef(new Vector3(160, 0, 0));
+  const uranusPositionRef = useRef(new Vector3(1050, 0, 0));
 
   const [uranusTexture] = useTexture<string[]>([UranusMap]);
 
   useFrame(({ clock }) => {
     if (uranusRef.current) {
-      const angle = clock.getElapsedTime() * 0.4;
-      const distance = 160;
+      const angle = clock.getElapsedTime() * 0.125;
+      const distance = 1050;
       const x = Math.sin(angle) * distance;
       const z = Math.cos(angle) * distance;
       uranusRef.current.position.set(x, 0, z);
@@ -28,7 +28,7 @@ const Uranus = () => {
         //castShadow
         receiveShadow
       >
-        <sphereGeometry args={[7, 32, 32]} />
+        <sphereGeometry args={[42, 32, 32]} />
         <meshPhongMaterial map={uranusTexture} />
       </mesh>
     </group>
