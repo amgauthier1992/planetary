@@ -1,0 +1,15 @@
+.audio-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+/* Html Drei override */
+.audio-control-container {
+  top: 25px !important;
+  left: 25px !important;
+  transform: none !important;
+}
