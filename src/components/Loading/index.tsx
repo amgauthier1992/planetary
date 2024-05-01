@@ -1,13 +1,36 @@
 import { Html } from '@react-three/drei';
+import RocketIcon from './icon';
+import './styles.css';
 
-//cartoony Rocket that streams across the screen while Loading from L to R
 const Loading = () => {
   return (
     <Html
-      as='div'
       fullscreen
+      style={{
+        position: 'relative',
+        backgroundColor: '#212526',
+      }}
     >
-      <p>Loading...</p>
+      <div className='rocket-container'>
+        <div className='structure'>
+          <RocketIcon />
+        </div>
+      </div>
+      <div className='text-container'>
+        <h2 className='loader-text'>Loading...</h2>
+      </div>
+      <div className='smoke'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </Html>
   );
 };
