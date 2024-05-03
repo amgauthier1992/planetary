@@ -34,7 +34,6 @@ type CelestialBodyProviderProps = {
 
 export const CelestialBodyProvider = ({ children }: CelestialBodyProviderProps) => {
   const [selectedBody, setSelectedBody] = useState<CelestialBody | null>(null);
-  console.log(selectedBody?.name);
 
   const handleSelectCelestialBody = useCallback((bodyData: CelestialBody) => {
     setSelectedBody(bodyData);
