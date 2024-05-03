@@ -19,7 +19,7 @@ const FactsModal = () => {
           <img
             alt={selectedBody.name}
             className='modal-img'
-            src={`/assets/${selectedBody.name.toLowerCase()}/${selectedBody.name.toLowerCase()}.png`}
+            src={`/assets/${selectedBody.name.toLowerCase()}/${selectedBody.name.toLowerCase()}-min.png`}
           />
           <div className='facts'>
             <div className='fact-row'>
