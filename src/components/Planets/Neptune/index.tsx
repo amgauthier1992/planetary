@@ -44,7 +44,7 @@ const Neptune = () => {
             percentage: 1,
           },
         ],
-        diameter: 49244,
+        diameter: '49,244',
         gravity: 11.15,
         mass: '1.024e26',
         moons: 14,

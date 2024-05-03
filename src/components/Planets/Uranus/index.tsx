@@ -44,7 +44,7 @@ const Uranus = () => {
             percentage: 2.3,
           },
         ],
-        diameter: 50724,
+        diameter: '50,724',
         gravity: 8.69,
         mass: '8.681e25',
         moons: 27,

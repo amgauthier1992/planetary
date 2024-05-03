@@ -44,7 +44,7 @@ const Mars = () => {
             percentage: 2,
           },
         ],
-        diameter: 6792,
+        diameter: '6,792',
         gravity: 3.711,
         mass: '6.4171e23',
         moons: 2,

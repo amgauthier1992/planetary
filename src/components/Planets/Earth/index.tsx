@@ -43,7 +43,7 @@ const Earth = () => {
           { element: 'Oxygen', percentage: 21 },
           { element: 'Carbon Dioxide', percentage: 0.04 },
         ],
-        diameter: 12742,
+        diameter: '12,742',
         gravity: 9.81,
         mass: '5.972e24',
         moons: 1,

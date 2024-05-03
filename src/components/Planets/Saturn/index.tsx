@@ -42,7 +42,7 @@ const Saturn = () => {
             percentage: 3.25,
           },
         ],
-        diameter: 116464,
+        diameter: '116,464',
         gravity: 10.44,
         mass: '5.6834e26',
         moons: 82,

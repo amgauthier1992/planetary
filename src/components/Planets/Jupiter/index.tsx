@@ -40,7 +40,7 @@ const Jupiter = () => {
             percentage: 10.2,
           },
         ],
-        diameter: 139822,
+        diameter: '139,822',
         gravity: 24.79,
         mass: '1.8982e27',
         moons: 79,

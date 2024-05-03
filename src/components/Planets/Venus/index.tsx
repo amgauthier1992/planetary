@@ -40,7 +40,7 @@ const Venus = () => {
             percentage: 3.5,
           },
         ],
-        diameter: 12104,
+        diameter: '12,104',
         gravity: 8.87,
         mass: '4.8675e24',
         moons: 0,

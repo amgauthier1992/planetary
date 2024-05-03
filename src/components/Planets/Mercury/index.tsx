@@ -30,7 +30,7 @@ const Mercury = () => {
   useEffect(() => {
     if (mercuryRef.current) {
       mercuryRef.current.userData = {
-        diameter: 4879,
+        diameter: '4,879',
         gravity: 3.7,
         mass: '3.3011e23',
         moons: 0,
