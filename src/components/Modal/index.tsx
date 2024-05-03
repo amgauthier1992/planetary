@@ -60,7 +60,7 @@ const FactsModal = () => {
               <div className='fact-l'>
                 <span className='fact-title'>Atmosphere:</span>
                 <ul className='atmospheric-elements'>
-                  {selectedBody.atmosphere.map((element) => (
+                  {selectedBody.atmosphere?.map((element) => (
                     <li
                       className='atmospheric-element'
                       key={element.element}
@@ -69,6 +69,7 @@ const FactsModal = () => {
                       %
                     </li>
                   ))}
+                  {!selectedBody.atmosphere && <li>None</li>}
                 </ul>
               </div>
             </div>

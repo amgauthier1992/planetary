@@ -6,7 +6,7 @@ type AtmosphericElement = {
 };
 
 export interface CelestialBody {
-  atmosphere: AtmosphericElement[];
+  atmosphere?: AtmosphericElement[];
   diameter: number; // km
   gravity: number; // m/s²
   mass: number | string; // kg
