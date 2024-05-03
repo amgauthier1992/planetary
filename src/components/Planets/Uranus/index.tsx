@@ -52,7 +52,7 @@ const Uranus = () => {
         orbitalPeriod: '30,660',
         rotationalPeriod: 0.72,
         sunDistance: '4.495e9',
-        surfaceTemp: -201,
+        surfaceTemp: -197,
       } as CelestialBody;
     }
   }, []);
