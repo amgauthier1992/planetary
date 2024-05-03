@@ -7,15 +7,18 @@ type AtmosphericElement = {
 
 export interface CelestialBody {
   atmosphere?: AtmosphericElement[];
-  diameter: number; // km
+  diameter: number | string; // km
+  galaxy?: string;
   gravity: number; // m/s²
   mass: number | string; // kg
   moons?: number;
   name: string;
   orbitalPeriod?: number | string; // time it takes to go around the Sun (days)
+  relativeSize?: string;
   rotationalPeriod: number; // time it takes to complete one rotation on its axis (days)
-  sunDistance: number | string; // km
-  surfaceTemp: number; // celsius
+  starType?: string;
+  sunDistance?: number | string; // km
+  surfaceTemp: number | string; // celsius
 }
 
 export interface CelestialBodyContextType {
