@@ -1,14 +1,18 @@
-import { useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Mesh, Vector3 } from 'three';
+import { CelestialBody } from '../../../context/CelestialBodyProvider';
+import { useCelestialBody, useModal } from '../../../context/hooks';
 import MercuryMap from '/assets/mercury/mercury.jpg';
 
 const Mercury = () => {
   const mercuryRef = useRef<Mesh>();
   const mercuryPositionRef = useRef(new Vector3(175, 0, 0));
-
   const [mercuryTexture] = useTexture<string[]>([MercuryMap]);
+
+  const { handleSelectCelestialBody } = useCelestialBody();
+  const { toggleModal } = useModal();
 
   useFrame(({ clock }) => {
     if (mercuryRef.current) {
@@ -22,9 +26,36 @@ const Mercury = () => {
     }
   });
 
+  //Assign data directly to mesh after it's creation
+  useEffect(() => {
+    if (mercuryRef.current) {
+      mercuryRef.current.userData = {
+        diameter: '4,879',
+        gravity: 3.7,
+        mass: '3.3011e23',
+        moons: 0,
+        name: 'Mercury',
+        orbitalPeriod: 88,
+        rotationalPeriod: 58.6,
+        sunDistance: '57.9e6',
+        surfaceTemp: 167,
+      } as CelestialBody;
+    }
+  }, []);
+
+  //abstract this into context so that we don't need to repeat it for every planet component?
+  const handleSelectPlanet = useCallback(() => {
+    if (mercuryRef?.current?.userData) {
+      const planetData = mercuryRef.current.userData as CelestialBody;
+      handleSelectCelestialBody(planetData);
+      toggleModal();
+    }
+  }, [handleSelectCelestialBody, toggleModal]);
+
   return (
     <mesh
       //castShadow
+      onClick={handleSelectPlanet}
       receiveShadow
       ref={mercuryRef as React.MutableRefObject<Mesh>}
     >

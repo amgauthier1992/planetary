@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, { createContext, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { Audio as THREEAudio, AudioLoader, AudioListener } from 'three';
 
 export interface AudioContextType {
