@@ -12,7 +12,7 @@ export interface CelestialBody {
   mass: number | string; // kg
   moons?: number;
   name: string;
-  orbitalPeriod?: number; // time it takes to go around the Sun (days)
+  orbitalPeriod?: number | string; // time it takes to go around the Sun (days)
   rotationalPeriod: number; // time it takes to complete one rotation on its axis (days)
   sunDistance: number | string; // km
   surfaceTemp: number; // celsius

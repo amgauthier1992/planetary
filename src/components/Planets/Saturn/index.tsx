@@ -47,7 +47,7 @@ const Saturn = () => {
         mass: '5.6834e26',
         moons: 82,
         name: 'Saturn',
-        orbitalPeriod: 10767.5,
+        orbitalPeriod: '10,767.5',
         rotationalPeriod: 0.44,
         sunDistance: '1.429e9',
         surfaceTemp: -139,

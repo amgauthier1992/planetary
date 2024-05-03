@@ -45,7 +45,7 @@ const Jupiter = () => {
         mass: '1.8982e27',
         moons: 79,
         name: 'Jupiter',
-        orbitalPeriod: 4343.5,
+        orbitalPeriod: '4,343.5',
         rotationalPeriod: 0.41,
         sunDistance: '778.6e6',
         surfaceTemp: -108,
