@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, useProgress } from '@react-three/drei';
 import AudioControl from './components/AudioControl';
 import FactsModal from './components/Modal';
 import SolarSystem from './layouts/SolarSystem';
@@ -9,6 +9,7 @@ import { useAudio } from './context/hooks';
 
 const App = () => {
   const { audioLoaded } = useAudio();
+  const { progress } = useProgress();
 
   return (
     <>
@@ -16,7 +17,7 @@ const App = () => {
         camera={{ fov: 75, near: 0.1, far: 4500, position: [0, 400, 500] }}
         shadows
       >
-        {audioLoaded ? (
+        {audioLoaded && progress === 100 ? (
           <>
             {/* <Perf /> */}
             <OrbitControls
