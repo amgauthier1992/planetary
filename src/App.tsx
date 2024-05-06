@@ -30,6 +30,8 @@ const App = () => {
               enablePan
               minPolarAngle={Math.PI / 3}
               maxPolarAngle={Math.PI / 1.5}
+              minDistance={100}
+              maxDistance={2500}
             />
             <SolarSystem />
             <AudioControl />
