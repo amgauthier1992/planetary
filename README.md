@@ -18,3 +18,7 @@ As-of May 6th, 2024, v1.0 of Planetary has been deployed! Features included in t
 - Optimization of orbit controls (distance regulation, better panning behavior)
 - Optimization of initial load times (Canvas elements, modal img assets, audio)
 - Research/address mobile optimization & keyboard accessibility with React Three Fiber
+
+#### Attributions
+
+Music by Joshua Queen
