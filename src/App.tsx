@@ -5,7 +5,6 @@ import FactsModal from './components/Modal';
 import SolarSystem from './layouts/SolarSystem';
 import Loading from './components/Loading';
 import { useAudio } from './context/hooks';
-import PreloadImages from './utils/preload-images';
 // import { Perf } from 'r3f-perf';
 
 const App = () => {
@@ -40,7 +39,6 @@ const App = () => {
         )}
       </Canvas>
       <FactsModal />
-      <PreloadImages />
     </>
   );
 };

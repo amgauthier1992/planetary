@@ -1,11 +1,48 @@
+import { useEffect, useState } from 'react';
 import { useCelestialBody, useModal } from '../../context/hooks';
 import './styles.css';
 
 const FactsModal = () => {
   const { isModalOpen, toggleModal } = useModal();
   const { selectedBody } = useCelestialBody();
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  return isModalOpen && selectedBody ? (
+  useEffect(() => {
+    const imageUrls = [
+      '/assets/misc/stars.jpg',
+      '/assets/sun/sun-min.png',
+      '/assets/mercury/mercury-min.png',
+      '/assets/venus/venus-min.png',
+      '/assets/earth/earth-min.png',
+      '/assets/mars/mars-min.png',
+      '/assets/jupiter/jupiter-min.png',
+      '/assets/saturn/saturn-min.png',
+      '/assets/uranus/uranus-min.png',
+      '/assets/neptune/neptune-min.png',
+    ];
+    preloadImages(imageUrls);
+  }, []);
+
+  const preloadImages = (urls: string[]) => {
+    const imagePromises = urls.map((url) => {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = url;
+        image.onload = resolve;
+        image.onerror = reject;
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => {
+        setImagesLoaded(true);
+      })
+      .catch((error) => {
+        console.error('Error preloading images:', error);
+      });
+  };
+
+  return isModalOpen && selectedBody && imagesLoaded ? (
     <div className='modal-overlay'>
       <div className='modal'>
         <button
